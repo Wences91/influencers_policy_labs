@@ -1,5 +1,5 @@
-# Influencers - Policy Labs’ Political Impact in Europe: A social network approach
-This repository includes all data processing for the work "*Influencers - Policy Labs’ Political Impact in Europe: A social network approach*".
+# Identification and analysis of Policy Lab Influencers in Europe: A social network approach
+This repository includes all data processing for the work "*Identification and analysis of Policy Lab Influencers in Europe: A social network approach*".
 
 ## Authors
 * Esteban Romero-Frías(<erf@ugr.es>)
