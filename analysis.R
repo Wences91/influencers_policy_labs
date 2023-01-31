@@ -59,6 +59,8 @@ glossary <- read.delim('data/data_labs.tsv',
                        colClasses = c('id'='character'),
                        skipNul = TRUE)
 
+glossary$screen_name <- glossary$id
+
 
 # Stats
 length(unique(friends$target))
@@ -208,7 +210,7 @@ map <- ggplot2::map_data('world')
 
 wrongs_names <- unique(good_locations$pais)[which(!(unique(good_locations$pais) %in% map$region))]
 good_names <- c('Netherlands', 'UK', 'USA', 'Trinidad', 'South Africa', 'Germany', 'Dominican Republic',
-                'China', 'Ivory Coast', 'Taiwan', 'Democratic Republic of the Congo', 'Czech Republic', 'France', 'Democratic Republic of the Congo', 'Democratic Republic of the Congo', 'Netherlands',
+                'China', 'Ivory Coast', 'Taiwan', 'Democratic Republic of the Congo', 'Czech Republic', 'North Macedonia', 'France', 'Democratic Republic of the Congo', 'Democratic Republic of the Congo', 'Netherlands',
                 'Virgin Islands', 'Saint Vincent', 'Gambia', 'Barbuda', '', 'Timor-Leste', 'Swaziland', 'Bahamas',
                 'Kazakhstan', '', 'China', 'UK', 'Jamaica', 'Spain', 'Sao Tome and Principe', 'South Georgia',
                 'Saint Kitts', 'Saint Helena', 'Micronesia', '', 'Italy', 'Japan', '', '', 'Peru', 'Switzerland',
@@ -417,10 +419,14 @@ sapply(unique(sankey_data$Var1), function(x){
   sankey_data$Var1[which(sankey_data$Var1==x)] <<- paste0(x, ' (', round(max(sankey_data$Freq3[which(sankey_data$Var1==x)]),1), '% | ', round(sum(sankey_data$Freq2[which(sankey_data$Var1==x)]),1), '%)')
 })
 
+# Full information
+#sankey_data$Block[which(sankey_data$Block=='AS')] <- paste0('AS (', round(sum(sankey_data$Freq3[which(sankey_data$Block=='AS')]),1), '% | ', round(sum(sankey_data$Freq2[which(sankey_data$Block=='AS')]),1), '%)')
+#sankey_data$Block[which(sankey_data$Block=='NO')] <- paste0('NO (', round(sum(sankey_data$Freq3[which(sankey_data$Block=='NO')]),1), '% | ', round(sum(sankey_data$Freq2[which(sankey_data$Block=='NO')]),1), '%)')
+#sankey_data$Block[which(sankey_data$Block=='SO')] <- paste0('SO (', round(sum(sankey_data$Freq3[which(sankey_data$Block=='SO')]),1), '% | ', round(sum(sankey_data$Freq2[which(sankey_data$Block=='SO')]),1), '%)')
 
-sankey_data$Block[which(sankey_data$Block=='AS')] <- paste0('AS (', round(sum(sankey_data$Freq3[which(sankey_data$Block=='AS')]),1), '% | ', round(sum(sankey_data$Freq2[which(sankey_data$Block=='AS')]),1), '%)')
-sankey_data$Block[which(sankey_data$Block=='NO')] <- paste0('NO (', round(sum(sankey_data$Freq3[which(sankey_data$Block=='NO')]),1), '% | ', round(sum(sankey_data$Freq2[which(sankey_data$Block=='NO')]),1), '%)')
-sankey_data$Block[which(sankey_data$Block=='SO')] <- paste0('SO (', round(sum(sankey_data$Freq3[which(sankey_data$Block=='SO')]),1), '% | ', round(sum(sankey_data$Freq2[which(sankey_data$Block=='SO')]),1), '%)')
+sankey_data$Block[which(sankey_data$Block=='AS')] <- paste0('AS (', round(sum(sankey_data$Freq2[which(sankey_data$Block=='AS')]),1), '%)')
+sankey_data$Block[which(sankey_data$Block=='NO')] <- paste0('NO (', round(sum(sankey_data$Freq2[which(sankey_data$Block=='NO')]),1), '%)')
+sankey_data$Block[which(sankey_data$Block=='SO')] <- paste0('SO (', round(sum(sankey_data$Freq2[which(sankey_data$Block=='SO')]),1), '%)')
 
 
 # A connection data frame is a list of flows with intensity for each flow
