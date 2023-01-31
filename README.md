@@ -1,10 +1,12 @@
 # Overview
-This repository includes all data processing for the work "*Identification and analysis of Policy Lab Influencers in Europe: A social network approach*".
+This repository includes all data processing for the work "*Who influences policy labs in European Union? A social network approach*".
 
 ## Authors
-* Esteban Romero-Frías(<erf@ugr.es>)
-* Daniel Torres-Salinas (<torressalinas@ugr.es>)
-* Wenceslao Arroyo-Machado (<wences@ugr.es>)
+* [Esteban Romero-Frías](https://orcid.org/0000-0003-2205-3560) (<erf@ugr.es>)
+* [Daniel Torres-Salinas](https://orcid.org/0000-0001-8790-3314) (<torressalinas@ugr.es>)
+* [Wenceslao Arroyo-Machado](https://orcid.org/0000-0001-9437-8757) (<wences@ugr.es>)
+
+*[University of Granada](https://ror.org/04njjy449)*
 
 ## Data
 Twitter data for the year 2019 are available, but only includes User ID and Tweet ID, according to Twitter developer policy.
